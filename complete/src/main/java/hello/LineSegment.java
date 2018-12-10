@@ -20,7 +20,7 @@ public class LineSegment {
 		this.points = points;
 	}
 	
-	public double getLengthWithoutSqrt() {
+	public double getLengthSquared() {
 		int pointCount = points.length;
 		float deltaX = points[pointCount - 1].getX() - points[0].getX();
 		float deltaY = points[pointCount - 1].getY() - points[0].getY();

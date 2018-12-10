@@ -100,15 +100,6 @@ public class LongestLineSegmentDetectorServiceTest extends TestCase {
 		
 		LineSegment[] lineSegments = getLongestLineSegmentsRequest(3);
 		
-		for(int i = 0; i < lineSegments.length; i++) {
-			System.out.println("SEGMENT: " + i);
-			for(int j = 0; j < lineSegments[i].getPoints().length; j++) {
-				System.out.println("X: " + lineSegments[i].getPoints()[j].getX());
-				System.out.println("Y: " + lineSegments[i].getPoints()[j].getY());
-				System.out.println("");
-			}
-		}
-		
 		assertEquals(2, lineSegments.length);
 	}
 	

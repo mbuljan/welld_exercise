@@ -52,8 +52,8 @@ public class LongestLineSegmentDetectionController {
     	}
     	
     	lineSegmentList.sort((LineSegment lineSegment1, LineSegment lineSegment2) -> {
-    		double lineSegment1Magnitude = lineSegment1.getLengthWithoutSqrt();
-    		double lineSegment2Magnitude = lineSegment2.getLengthWithoutSqrt();
+    		double lineSegment1Magnitude = lineSegment1.getLengthSquared();
+    		double lineSegment2Magnitude = lineSegment2.getLengthSquared();
     		if(lineSegment1Magnitude < lineSegment2Magnitude) {
     			return 1;
     		} else if(lineSegment1Magnitude > lineSegment2Magnitude) {
@@ -65,13 +65,13 @@ public class LongestLineSegmentDetectionController {
     	
     	// check if there are multiple line segments of the same length
     	LineSegment largestLineSegment = lineSegmentList.get(0);
-    	double largestLength = lineSegmentList.get(0).getLengthWithoutSqrt();
+    	double largestLength = lineSegmentList.get(0).getLengthSquared();
     	ArrayList<LineSegment> result = new ArrayList<LineSegment>();
     	result.add(largestLineSegment);
     	
     	for(int i = 1; i < lineSegmentList.size(); i++) {
     		LineSegment currentLineSegment = lineSegmentList.get(i);
-    		if(currentLineSegment.getLengthWithoutSqrt() == largestLength) {
+    		if(currentLineSegment.getLengthSquared() == largestLength) {
     			result.add(currentLineSegment);
     		}
     	}
